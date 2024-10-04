@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+}
+h1.skill-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: linear-gradient(90deg, #00b09b, #96c93d);;
+    position: relative;
+}
+
+h1.skill-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6f61, #3b7ddd);
+    border-radius: 2px;
+}
+
+h3.about-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+h3.about-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -8px;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #00b09b, #96c93d); /* New gradient */
+    border-radius: 2px;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fafbfe;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.wrapper {
+    display: flex;
+    
+}
+.sidebar-item{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+}
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #fafbfe;
+    margin-left: 70px; /* Adjust this margin to match the sidebar width */
+    padding: 20px; /* Add padding to the main content */
+}
+
+#sidebar {
+    width: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0; /* Stretch the sidebar to the bottom of the viewport */
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #0e2238;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgb(0,0,0,0.2), 0 6px 20px 0 rgb(0,0,0,0.2);
+}
+.ul{
+    list-style-type: none;
+}
+.pen-list {
+    
+    list-style-type: none; /* Remove default list styling */
+    padding-left: 20px; /* Adjust the padding for the list */
+}
+
+.pen-list li {
+    position: relative; /* Position the pen icon */
+    padding-left: 25px; /* Space before the text */
+}
+
+.pen-list li::before {
+    content: "\270E"; /* Unicode for the pen-like symbol */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px; /* Adjust the size as needed */
+    color: #000; /* Set the color of the symbol */
+}
+
+
+.card .card-body ul li {
+    list-style: none !important;
+}
+
+.skill-card {
+    border: none;
+    border-radius: 10px;
+    background: white; /* White background */
+    color: black; /* Default text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure content is spaced evenly */
+    height: 100%; /* Make cards fill the container height */
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Add padding inside the card */
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card .icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: black; /* Black icon color */
+}
+
+.skill-card .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: black; /* Black text color */
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    padding: 0 10px; /* Add horizontal padding */
+}
+
+.skill-card .card-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff9800, #f44336); /* Retain the underline gradient */
+    border-radius: 2px;
+}
+
+.skill-card .card-text {
+    color: #333; /* Slightly darkened text for readability */
+    font-size: 0.8em;
+    margin-top: auto; /* Push text to the bottom */
+}
+.experience-title, .education-title {
+    font-size: 1.1em; /* Reduced font size */
+    color: #1a73e8;
+    margin-bottom: 4px;
+}
+
+.experience-date, .education-date {
+    font-size: 0.85em; /* Slightly reduced font size */
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.experience-location, .education-location {
+    font-size: 0.85em; /* Slightly reduced font size */
+    color: #333;
+}
+
+/* Ensuring alignment and style consistency */
+.experience-content, .education-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+.custom-padding {
+    padding-left: 50px; /* Adjust this value as needed */
+}
+
+.experience-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for the hover effect */
+}
+
+.experience-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+}
+
+.education-card{
+    max-width: 1200px; /* Adjust the width as needed */
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for the hover effect */
+}
+.education-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+}
+.img-custom {
+    width: 150px;
+    height: 75px; /* Set a fixed height */
+    object-fit:contain; /* Ensures that the image covers the entire area without stretching */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for the hover effect */
+}
+.img-custom:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+}
+
